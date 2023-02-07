@@ -1,0 +1,36 @@
+# Beschreibung der Tabellen für die Datenbank
+
+## Tabellenaufbau
+
+### Tabelle "Jahr"
+
+| Spalte | Typ | Beschreibung |
+| ------ | --- | ----------- |
+| ID | INT (Primary Key) | Eindeutiger Identifikator |
+| Jahr | INT | Das Jahr |
+
+### Tabelle "Klasse"
+
+| Spalte | Typ | Beschreibung |
+| ------ | --- | ----------- |
+| ID | INT (Primary Key) | Eindeutiger Identifikator |
+| Klasse | VARCHAR(255) | Die Klasse |
+
+### Tabelle "Schulunterlagen"
+
+| Spalte | Typ | Beschreibung |
+| ------ | --- | ----------- |
+| ID | INT (Primary Key) | Eindeutiger Identifikator |
+| Jahr_ID | INT (Foreign Key) | Verknüpfung zur Tabelle "Jahr" |
+| Klasse_ID | INT (Foreign Key) | Verknüpfung zur Tabelle "Klasse" |
+| Titel | VARCHAR(255) | Der Titel der Schulunterlage |
+| Beschreibung | TEXT | Die Beschreibung der Schulunterlage |
+
+### Tabelle "Dateien"
+
+| Spalte | Typ | Beschreibung |
+| ------ | --- | ----------- |
+| ID | INT (Primary Key) | Eindeutiger Identifikator |
+| Schulunterlagen_ID | INT (Foreign Key) | Verknüpfung zur Tabelle "Schulunterlagen" |
+| Dateiname | VARCHAR(255) | Der Name der Datei |
+| Pfad | VARCHAR(255) | Der Pfad, unter dem die Datei gespeichert ist |
